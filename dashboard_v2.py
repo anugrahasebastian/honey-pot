@@ -3,6 +3,7 @@ import streamlit as st
 import json
 from collections import Counter
 import matplotlib.pyplot as plt
+
 st.set_page_config(page_title="AI Honeypot Dashboard", layout="wide")
 st.markdown("""
 <style>
