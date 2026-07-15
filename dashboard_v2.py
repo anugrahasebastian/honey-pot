@@ -631,20 +631,71 @@ with col1:
 with col2:
     st.warning("🛡 Enable MFA")
     st.info("🔥 Update Firewall Rules")
-st.subheader("📄 AI Incident Report")
+st.markdown("---")
 
-st.info("""
-An attacker connected to the honeypot and attempted
-to download a suspicious file. The attacker then
-prepared the file for execution and attempted
-privilege escalation.
+st.markdown("""
+<div style="
+background:#081427;
+border:1px solid #00d4ff;
+border-radius:15px;
+padding:18px;
+margin-bottom:20px;
+box-shadow:0 0 15px rgba(0,212,255,.2);
+">
+<h2 style="color:#00d4ff;">
+📄 AI INCIDENT REPORT
+</h2>
+</div>
+""", unsafe_allow_html=True)
 
-Threat Level: CRITICAL
-Confidence: 95%
+st.markdown(f"""
+<div style="
+background:#081427;
+border:1px solid #00d4ff;
+border-radius:15px;
+padding:25px;
+box-shadow:0 0 15px rgba(0,212,255,.2);
+">
 
-Recommended Action:
-Block source IP and investigate activity.
-""")
+<h3 style="color:#00ffff;">
+📝 Executive Summary
+</h3>
+
+<p style="color:white;font-size:17px;">
+An attacker successfully connected to the honeypot and initiated a sequence of malicious activities including malware download, execution preparation, and privilege escalation attempts.
+</p>
+
+<hr style="border:1px solid #14395e;">
+
+<h3 style="color:#ff5555;">
+🚨 Threat Level
+</h3>
+
+<p style="font-size:28px;font-weight:bold;color:#ff3b30;">
+CRITICAL
+</p>
+
+<h3 style="color:#00ff99;">
+🤖 AI Confidence
+</h3>
+
+<p style="font-size:24px;color:white;">
+95%
+</p>
+
+<h3 style="color:#00d4ff;">
+🛡 Recommended Response
+</h3>
+
+<ul style="color:white;font-size:17px;">
+<li>Block the source IP immediately</li>
+<li>Investigate affected systems</li>
+<li>Rotate compromised credentials</li>
+<li>Review firewall and IDS rules</li>
+</ul>
+
+</div>
+""", unsafe_allow_html=True)
 st.markdown("---")
 st.markdown("---")
 
