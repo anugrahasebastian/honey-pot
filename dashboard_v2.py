@@ -595,20 +595,72 @@ elif skill == "Intermediate":
 else:
     st.write("Reason: Limited attack activity observed.")
 st.markdown("---")
-st.subheader("🔮 Intent Prediction")
 
-current_intent = "Malware Download"
-predicted_action = "Privilege Escalation"
-confidence_pred = 85
+st.markdown("""
+<div style="
+background:#081427;
+border:1px solid #00d4ff;
+border-radius:15px;
+padding:18px;
+margin-bottom:15px;
+box-shadow:0 0 15px rgba(0,212,255,.25);
+">
+<h2 style="color:#00d4ff;">
+🔮 AI Intent Prediction
+</h2>
+</div>
+""", unsafe_allow_html=True)
 
-st.info(f"""
-Current Intent: {current_intent}
+col1, col2 = st.columns(2)
 
-Predicted Next Action: {predicted_action}
+with col1:
+    st.markdown(f"""
+    <div style="
+    background:#081427;
+    border:1px solid #00ffff;
+    border-radius:15px;
+    padding:20px;
+    height:180px;
+    box-shadow:0 0 12px rgba(0,255,255,.2);
+    ">
+    <h3 style="color:#00ffff;">🎯 Current Intent</h3>
 
-Prediction Confidence: {confidence_pred}%
-""")
+    <p style="font-size:24px;color:white;font-weight:bold;">
+    {current_intent}
+    </p>
 
+    <p style="color:#8fa9c7;">
+    AI detected attacker behavior based on executed commands.
+    </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown(f"""
+    <div style="
+    background:#081427;
+    border:1px solid #ffb000;
+    border-radius:15px;
+    padding:20px;
+    height:180px;
+    box-shadow:0 0 12px rgba(255,176,0,.2);
+    ">
+    <h3 style="color:#ffb000;">⚡ Predicted Next Action</h3>
+
+    <p style="font-size:24px;color:white;font-weight:bold;">
+    {predicted_action}
+    </p>
+
+    <p style="color:#8fa9c7;">
+    Confidence:
+    <span style="color:#00ff99;font-weight:bold;">
+    {confidence_pred}%
+    </span>
+    </p>
+
+    </div>
+    """, unsafe_allow_html=True)
+    
 st.markdown("---")
 st.subheader("🛡️ MITRE ATT&CK Mapping")
 
