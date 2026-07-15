@@ -680,18 +680,114 @@ with col2:
     """, unsafe_allow_html=True)
     
 st.markdown("---")
-st.subheader("🛡️ MITRE ATT&CK Mapping")
+st.markdown("---")
 
-st.success("""
-T1105 - Ingress Tool Transfer
-Detected via: wget malware.sh
+st.markdown("""
+<div style="
+background:#081427;
+border:1px solid #00d4ff;
+border-radius:15px;
+padding:18px;
+margin-bottom:20px;
+box-shadow:0 0 15px rgba(0,212,255,.2);
+">
+<h2 style="color:#00d4ff;">
+🛡 MITRE ATT&CK Mapping
+</h2>
+</div>
+""", unsafe_allow_html=True)
 
-T1548 - Abuse Elevation Control Mechanism
-Detected via: sudo su
+col1, col2, col3 = st.columns(3)
 
-T1059 - Command and Scripting Interpreter
-Detected via: Shell Commands
-""")
+with col1:
+    st.markdown("""
+    <div style="
+    background:#081427;
+    border:1px solid #00d4ff;
+    border-radius:15px;
+    padding:18px;
+    height:220px;
+    box-shadow:0 0 12px rgba(0,212,255,.2);
+    ">
+    <h3 style="color:#00ffff;">T1105</h3>
+
+    <p style="color:white;font-size:18px;">
+    Ingress Tool Transfer
+    </p>
+
+    <p style="color:#8fa9c7;">
+    Detected via:
+    </p>
+
+    <p style="color:#00ff99;font-weight:bold;">
+    wget malware.sh
+    </p>
+
+    <p style="color:#00ff99;">
+    ✔ Active
+    </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown("""
+    <div style="
+    background:#081427;
+    border:1px solid #ffb000;
+    border-radius:15px;
+    padding:18px;
+    height:220px;
+    box-shadow:0 0 12px rgba(255,176,0,.2);
+    ">
+    <h3 style="color:#ffb000;">T1548</h3>
+
+    <p style="color:white;font-size:18px;">
+    Abuse Elevation Control
+    </p>
+
+    <p style="color:#8fa9c7;">
+    Detected via:
+    </p>
+
+    <p style="color:#00ff99;font-weight:bold;">
+    sudo su
+    </p>
+
+    <p style="color:#00ff99;">
+    ✔ Active
+    </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col3:
+    st.markdown("""
+    <div style="
+    background:#081427;
+    border:1px solid #ff5555;
+    border-radius:15px;
+    padding:18px;
+    height:220px;
+    box-shadow:0 0 12px rgba(255,85,85,.2);
+    ">
+    <h3 style="color:#ff5555;">T1059</h3>
+
+    <p style="color:white;font-size:18px;">
+    Command & Scripting Interpreter
+    </p>
+
+    <p style="color:#8fa9c7;">
+    Detected via:
+    </p>
+
+    <p style="color:#00ff99;font-weight:bold;">
+    Shell Commands
+    </p>
+
+    <p style="color:#00ff99;">
+    ✔ Active
+    </p>
+    </div>
+    """, unsafe_allow_html=True)
 st.markdown("---")
 st.subheader("⏱️ Attack Timeline")
 
