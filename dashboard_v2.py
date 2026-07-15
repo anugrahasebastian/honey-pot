@@ -575,25 +575,69 @@ Recommended Action:
 Block source IP and investigate activity.
 """)
 st.markdown("---")
-st.subheader("🎯 Attacker Skill Assessment")
+st.markdown("---")
 
-skill = "Intermediate"
-
-if score >= 150:
+# Skill Calculation
+if score >= 80:
     skill = "Advanced"
-elif score >= 80:
+    progress = 95
+    color = "#ff3b30"
+    reason = "Multiple high-risk commands and privilege escalation detected."
+
+elif score >= 40:
     skill = "Intermediate"
+    progress = 65
+    color = "#ffb000"
+    reason = "Suspicious attack sequence detected."
+
 else:
     skill = "Beginner"
+    progress = 30
+    color = "#00ff99"
+    reason = "Limited attack activity observed."
 
-st.success(f"Attacker Skill Level: {skill}")
+st.markdown("""
+<div style="
+background:#081427;
+border:1px solid #00d4ff;
+border-radius:15px;
+padding:18px;
+margin-bottom:20px;
+box-shadow:0 0 15px rgba(0,212,255,.2);
+">
+<h2 style="color:#00d4ff;">
+🎯 Attacker Skill Assessment
+</h2>
+</div>
+""", unsafe_allow_html=True)
 
-if skill == "Advanced":
-    st.write("Reason: Multiple high-risk commands and privilege escalation attempts.")
-elif skill == "Intermediate":
-    st.write("Reason: Suspicious commands and attack progression detected.")
-else:
-    st.write("Reason: Limited attack activity observed.")
+st.markdown(f"""
+<div style="
+background:#081427;
+border:1px solid {color};
+border-radius:15px;
+padding:20px;
+box-shadow:0 0 12px rgba(0,212,255,.2);
+">
+
+<h3 style="color:white;">
+Skill Level
+</h3>
+
+<h1 style="color:{color};">
+{skill}
+</h1>
+
+<p style="color:#8fa9c7;">
+{reason}
+</p>
+
+</div>
+""", unsafe_allow_html=True)
+
+st.progress(progress/100)
+
+st.write(f"**Threat Experience Score:** {progress}%")
 st.markdown("---")
 
 # ---------------------------
