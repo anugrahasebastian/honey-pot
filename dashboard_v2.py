@@ -524,16 +524,87 @@ ax.pie(
 st.pyplot(fig)
 
 st.markdown("---")
-st.subheader("🚨 Live Attack Simulation")
 
-st.write("Attacker Actions:")
-st.write("✓ Downloaded suspicious file")
-st.write("✓ Prepared file for execution")
-st.write("✓ Attempted privilege escalation")
+st.markdown("""
+<div style="
+background:#081427;
+border:1px solid #00d4ff;
+border-radius:15px;
+padding:18px;
+margin-bottom:20px;
+box-shadow:0 0 15px rgba(0,212,255,.2);
+">
+<h2 style="color:#00d4ff;">
+🚨 LIVE ATTACK SIMULATION
+</h2>
+</div>
+""", unsafe_allow_html=True)
 
-st.warning("AI Interpretation: Possible Malware Deployment Attack")
+events = [
+    ("📥", "Downloaded suspicious payload", "#00d4ff"),
+    ("⚙️", "Prepared payload for execution", "#ffb000"),
+    ("🔐", "Attempted privilege escalation", "#ff3b30")
+]
 
-st.error("Threat Level: CRITICAL")
+for icon, event, color in events:
+    st.markdown(f"""
+    <div style="
+    background:#081427;
+    border-left:6px solid {color};
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:15px;
+    box-shadow:0 0 12px rgba(0,212,255,.15);
+    ">
+        <h4 style="color:white;margin:0;">
+        {icon} {event}
+        </h4>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.markdown("""
+<div style="
+background:#2b1b00;
+border:1px solid #ffb000;
+border-radius:12px;
+padding:18px;
+margin-top:15px;
+">
+
+<h3 style="color:#ffb000;">
+🧠 AI Interpretation
+</h3>
+
+<p style="color:white;font-size:17px;">
+Possible Malware Deployment Sequence Detected
+</p>
+
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<div style="
+background:#3a0d0d;
+border:1px solid #ff3b30;
+border-radius:12px;
+padding:18px;
+margin-top:15px;
+">
+
+<h3 style="color:#ff5555;">
+🚨 Threat Status
+</h3>
+
+<p style="
+color:white;
+font-size:24px;
+font-weight:bold;
+">
+CRITICAL
+</p>
+
+</div>
+""", unsafe_allow_html=True)
 st.markdown("---")
 st.markdown("""
 <div style="
