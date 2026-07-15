@@ -626,11 +626,39 @@ st.markdown("---")
 st.subheader("⏱️ Attack Timeline")
 
 timeline = [
-    ("10:00:01", "SSH Connection Established"),
-    ("10:00:15", "Downloaded Suspicious File"),
-    ("10:00:20", "Prepared File for Execution"),
-    ("10:00:30", "Attempted Privilege Escalation")
+    ("🟢", "10:00:01", "SSH Connection Established"),
+    ("🟡", "10:00:15", "Downloaded Suspicious File"),
+    ("🟠", "10:00:20", "Prepared File for Execution"),
+    ("🔴", "10:00:30", "Attempted Privilege Escalation")
 ]
 
-for time, event in timeline:
-    st.write(f"🔹 {time} → {event}")
+for icon, time, event in timeline:
+
+    st.markdown(f"""
+    <div style="
+        background:#081427;
+        border-left:6px solid #00d4ff;
+        padding:18px;
+        margin-bottom:18px;
+        border-radius:12px;
+        box-shadow:0 0 12px rgba(0,212,255,.18);
+    ">
+
+    <div style="
+        font-size:22px;
+        color:white;
+        font-weight:bold;
+    ">
+        {icon} {time}
+    </div>
+
+    <div style="
+        color:#00d4ff;
+        margin-top:8px;
+        font-size:18px;
+    ">
+        {event}
+    </div>
+
+    </div>
+    """, unsafe_allow_html=True)
