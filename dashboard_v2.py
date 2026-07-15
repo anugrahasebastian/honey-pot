@@ -596,6 +596,24 @@ else:
     st.write("Reason: Limited attack activity observed.")
 st.markdown("---")
 
+# ---------------------------
+# AI Intent Prediction Logic
+# ---------------------------
+
+if any("wget" in cmd for cmd in commands):
+    current_intent = "Malware Download"
+    predicted_action = "Privilege Escalation"
+    confidence_pred = 95
+
+elif any("sudo" in cmd for cmd in commands):
+    current_intent = "Privilege Escalation"
+    predicted_action = "Persistence"
+    confidence_pred = 90
+
+else:
+    current_intent = "Reconnaissance"
+    predicted_action = "Credential Access"
+    confidence_pred = 80
 st.markdown("""
 <div style="
 background:#081427;
